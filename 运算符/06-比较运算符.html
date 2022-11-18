@@ -8,12 +8,13 @@
     <script>
         console.log(3 >= 5);  //false
         console.log(2 <= 4);   //true
+        // 1、== 默认转换数据类型，会把字符串的数据类型转换为数字型，只要求值相等即可
         console.log(3 == 5);   //false
         console.log('小草' == '小花');  //false
         console.log(18 == 18);  //true
         console.log(18 == '18');  //true
         console.log(18 != 18);  //false
-
+        // 2、=== 全等，不仅值相同，且数据类型需要完全一致
         console.log(18 === 18);     //true
         console.log(18 === '18');   //false
     </script>
