@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var scoreArr = new Array(95, 90, 89, 91, 96);
+        var scoreStr = "";
+        for (var i = 0; i < scoreArr.length; i++) {
+            scoreStr += scoreArr[i] + "分 ";
+        }
+        function ascOrder(x, y) {
+            if (x < y) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+        scoreArr.sort(ascOrder);    //为分数进行降序排列
+        var newArr = scoreArr.slice(1, scoreArr.length - 1);
+        var totalScore = 0;
+        for (var i = 0; i < newArr.length; i++) {
+            totalScore += newArr[i];
+        }
+
+        document.write('5位评委打分：' + scoreStr);
+        document.write('<br>去掉一个最高分：' + scoreArr[0] + '分');
+        document.write('<br>去掉一个最低分：' + scoreArr[scoreArr.length - 1] + '分');
+        document.write('<br>歌手最终得分：' + totalScore + '分');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
