@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,13 +18,20 @@
         // document.write(parseFloat(str1)+ '<br>');    //123.456
         // document.write(parseFloat(str2)+ '<br>');    //NaN
 
-        var num1 = 123;
-        var num2 = '123abc';
-        document.write(isNaN(num1)+ '<br>');    //false
-        document.write(isNaN(num2));            //true
+        // var num1 = 123;
+        // var num2 = '123abc';
+        // document.write(isNaN(num1)+ '<br>');    //false
+        // document.write(isNaN(num2));            //true
+
+
+        document.write(isFinite(123) + '<br>');         //true
+        document.write(isFinite('123abc') + '<br>');    //false
+        document.write(isFinite(1 / 0));                //false
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
