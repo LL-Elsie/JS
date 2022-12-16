@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // document.write(eval('3+6'));           //9
+        // document.write('<br>')
+        // eval('x=5;y=6;document.write(x*y)');  //30
+
+        // var URI = 'http://127.0.0.1/save.html?name=测试';
+        // document.write(encodeURI(URI));     //http://127.0.0.1/save.html?name=%E6%B5%8B%E8%AF%95
+
+        var URI = encodeURI('http://127.0.0.1/save.html?name=测试');
+        document.write(decodeURI(URI));   //http://127.0.0.1/save.html?name=测试
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
