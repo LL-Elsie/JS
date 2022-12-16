@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var str1 = '123abc';
-        var str2 = 'abc123';
-        document.write(parseInt(str1)+ '<br>');
-        document.write(parseInt(str1,8)+ '<br>');
-        document.write(parseInt(str2)+ '<br>');
+        // var str1 = '123abc';
+        // var str2 = 'abc123';
+        // document.write(parseInt(str1)+ '<br>');
+        // document.write(parseInt(str1,8)+ '<br>');
+        // document.write(parseInt(str2)+ '<br>');
 
-        var str1 = '123.456abc';
-        var str2 = 'abc123.456';
-        document.write(parseInt(str1)+ '<br>');    //123.456
-        document.write(parseInt(str2)+ '<br>');    //NaN
+        // var str1 = '123.456abc';
+        // var str2 = 'abc123.456';
+        // document.write(parseFloat(str1)+ '<br>');    //123.456
+        // document.write(parseFloat(str2)+ '<br>');    //NaN
+
+        var num1 = 123;
+        var num2 = '123abc';
+        document.write(isNaN(num1)+ '<br>');    //false
+        document.write(isNaN(num2));            //true
     </script>
 </head>
 <body>
