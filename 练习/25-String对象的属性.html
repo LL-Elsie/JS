@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // length属性
+        // var str = new String('qwertyui');
+        // document.write(str.length);
+
+        // constructor属性
+        // var str = new String('hello world');
+        // if (str.constructor == String) {
+        //     document.write('这是一个字符串对象');
+        // }
+
+        // prototype属性
+        String.prototype.getLength = function() {
+            alert(this.length);
+        }
+        var str = new String('asdfghjkl');
+        str.getLength();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
