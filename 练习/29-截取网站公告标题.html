@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str1 = '截取网站公告标题截取网站公告标题截取网站公告标题';
+        var str2 = '截取网站公告标题';
+        var str3 = '截取网站公告标题截取网站公告标题';
+        var str4 = '截取网站公告标题截取网站公告标题截取网站公告标题截取网站公告标题';
+        function subStr(str) {
+            if (str.length > 10) {
+                return str.substr(0, 10) + '...';
+            } else {
+                return str;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <script>
+                document.write('<li>' + subStr(str1) + '</li>');
+                document.write('<li>' + subStr(str2) + '</li>');
+                document.write('<li>' + subStr(str3) + '</li>');
+                document.write('<li>' + subStr(str4) + '</li>');
+            </script>
+        </ul>
+    </div>
+
+</body>
+
+</html>
