@@ -11,15 +11,41 @@
             元字符：组成正则的基本符号
                 以符号的形式来代替文本内容
                 把所有的文本内容归结成一些符号来代替
-            2、\s  ---表示一个空格
+            1、\s  ---表示一个空格
+            2、\S  ---表示一个非空格
+            3、\t  ---表示一个制表符（tab），一个制表符就是制表符，不是空格
+            4、\d  ---表示一个数字
+            5、\D  ---表示一个非数字
+            6、\w  ---表示一个数字、字母、下划线（三者任其一）
 
         */
 
-        var reg = /\s/;     //表示字符串里面需要有一个空格字符
-        console.log(reg.test('anshfjfkb'));
-        console.log(reg.test('ansh fjfkb'));
-        console.log(reg.test('ansh fj  fkb'));
-        console.log(reg.test('anshfjfkb   '));
+        // var reg = /\s/;     //表示字符串里面需要有一个空格字符
+        // console.log(reg.test('anshfjfkb'));
+        // console.log(reg.test('ansh fjfkb'));
+        // console.log(reg.test('ansh fj  fkb'));
+        // console.log(reg.test('anshfjfkb   '));
+
+        // var reg = /\S/;       //表示字符串里面需要有一个非空格字符
+        // console.log(reg.test('                    '));
+        // console.log(reg.test('a                   '));
+        // console.log(reg.test('                   a'));
+        // console.log(reg.test(' d    f   g      h  '));
+
+        // var reg = /\t/;       //表示字符串里面需要有一个制表符字符
+        // console.log(reg.test('  '));
+        // console.log(reg.test('  '));
+
+
+        // var reg = /\d/;     //表示字符串里面需要有一个 数字 字符
+        // console.log(reg.test('ahdvdjd'));
+        // console.log(reg.test('ah23dvd34jd'));
+
+
+        var reg = /\D/;     //表示字符串里面需要有一个 非数字 字符
+        console.log(reg.test('123456789'));
+        console.log(reg.test('12345678d3456'));
+
 
     </script>
 </head>
