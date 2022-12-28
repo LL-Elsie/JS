@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            正则表达式的两个方法：
+            1、匹配：验证字符串是不是符合正则规则
+                语法：正则.test(你要检测的字符串)
+                返回值：一个布尔值，true或者false
+            2、捕获：从字符串里面获取符合正则规则的那一部分片段
+                语法：正则.exec(你要捕获的字符串)
+                返回值：
+                    @字符串中没有符合规则的片段  ---null
+                    @字符串里面有符合规则的片段
+                        #基础捕获，返回值是一个数组，[0]是捕获出来的片段，不管是有多少个片段/多少次，都只是捕获第一个片段
+        */
+
+        // a、准备一个正则
+        var reg = /abcd/;
+        console.log(reg.test('aaaaaaaaajfbb abcdsdfg'));
+
+        var res = reg.exec('aaaabbbbccccsssss');
+        console.log(res);
+
+        var res2 = reg.exec('aaaabcdddd');
+        console.log(res2);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
