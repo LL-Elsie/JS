@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +10,20 @@
         function ran(digit) {
             var result = '';
             for (let i = 0; i < digit; i++) {
-                result = result + (Math.floor(Math.random()*10));
+                result = result + (Math.floor(Math.random() * 10));
             }
             alert(result);
 
         }
     </script>
 </head>
+
 <body>
     请输入要生成随机数的位数：<p>
-        <form action="form">
-            <input type="text" name="digit">
-            <input type="button" value="生成" onclick="ran(form.digit.value)">
-        </form>
+    <form action="form">
+        <input type="text" name="digit">
+        <input type="button" value="生成" onclick="ran(form.digit.value)">
+    </form>
 </body>
+
 </html>
