@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            正则表达式的元字符 - 限定元字符
+            + 写在普通元字符或者字母符号的后面
+            + 修饰前面**一个符号**的出现次数
+
+            1、* 表示出现 0~多次
+            2、+ 表示出现 1~多次
+            3、? 表示出现 0~1 次
+            4、{n} 表示出现 n 次
+            5、{n,}表示出现 n ~ 多次
+            6、{n,m} 表示出现 n ~ m 次
+
+        */
+
+        // 1、*
+        // 表示你的字符串中需要出现一个0~多个数字组成的片段
+        // var reg = /\d*/;
+        // console.log(reg.test('abc1234abc'));    //true
+
+        // // 表示你的字符串只能由0~多个数字字符串组成
+        // var reg2 = /^\d*$/;
+        // console.log(reg2.test('abc1234'));
+        // // console.log(reg2.test('1234'));
+
+        // var reg = /^\d*$/;
+        // console.log(reg.test(''));         //true
+        // console.log(reg.test('1'));        //true
+        // console.log(reg.test('12'));       //true
+        // console.log(reg.test('123'));      //true
+        // console.log(reg.test('1234'));     //true
+
+        // 2、+
+        // 表示你的字符串只能有1~多个数字组成
+        // var reg = /^\d+$/;
+        // console.log(reg.test(''));         //false
+        // console.log(reg.test('1'));        //true
+        // console.log(reg.test('12'));       //true
+        // console.log(reg.test('123'));      //true
+        // console.log(reg.test('1234'));     //true
+
+        // 3、?
+        // 表示你的字符串只能由 0 或者 1 个数字组成
+        // var reg = /^\d?$/;
+        // console.log(reg.test(''));      //true
+        // console.log(reg.test('1'));     //true
+        // console.log(reg.test('12'));    //false
+
+        // 4、{n}
+        // 表示你的字符串只能由三个数字组成
+        // var reg = /^\d{3}$/;
+        // console.log(reg.test(''));       //false
+        // console.log(reg.test('1'));      //false
+        // console.log(reg.test('12'));     //false
+        // console.log(reg.test('123'));    //true
+
+
+        // 5、{n,}
+        // 表示你的字符串只能由 2~多个数字组成
+        // var reg = /^\d{2,}$/;
+        // console.log(reg.test(''));       //false
+        // console.log(reg.test('1'));      //false
+        // console.log(reg.test('12'));     //true
+        // console.log(reg.test('1234'));   //true
+
+        // 6、{n,m}
+        // 表示你的字符串只能由 2 ~ 4 个数字组成
+        // var reg = /^\d{2,4}$/;
+        // console.log(reg.test(''));           //false
+        // console.log(reg.test('1'));          //false
+        // console.log(reg.test('12'));         //true
+        // console.log(reg.test('123'));        //true
+        // console.log(reg.test('12345'));      //false
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
