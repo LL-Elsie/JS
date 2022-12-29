@@ -10,13 +10,28 @@
         /* 
             正则表达式的元字符-边界元字符
             1、^ 表示字符串开始
+            2、$ 表示字符串结束
+
         */
 
         // 1、^
         // 表示字符串需要有一个数字开头
-        var reg = /^\d/;
-        console.log(reg.test('ahsgv'));
-        console.log(reg.test('3ahsgv'));
+        // var reg = /^\d/;
+        // console.log(reg.test('ahsgv123'));
+        // console.log(reg.test('3ahsgv'));
+
+        // 2、$
+        // 表示字符串中需要以一个数字结尾
+        // var reg = /\d$/;
+        // console.log(reg.test('asdfg123'));    //true
+        // console.log(reg.test('asd23fg'));     //false
+        // console.log(reg.test('124asdfg'));    //false
+
+
+        // 表示字符串从开头到结尾只能有一个数字
+        var reg = /^\d$/;
+        console.log(reg.test('1b2'));    //false
+        console.log(reg.test('5'));    //true
 
     </script>
 </head>
