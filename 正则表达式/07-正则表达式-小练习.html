@@ -20,12 +20,18 @@
 
 
         /* 
-            需求2：
+            需求2：限定符判断
         */
-       var reg = /^abcd{2}$/;     //一个限定符只修饰前面一个字母
-       console.log(reg.test('abcdabcd'));   //false
-       console.log(reg.test('abcdd'));   //true
-       
+    //    var reg = /^abcd{2}$/;     //一个限定符只修饰前面一个字母
+    //    console.log(reg.test('abcdabcd'));   //false
+    //    console.log(reg.test('abcdd'));   //true
+
+
+        //3、 想匹配 abcdabcd
+        var reg = /a{2}b{2}c{2}d{2}/;
+        console.log(reg.test('abcdabcd'));    //false
+        console.log(reg.test('aabbccdd'));    //true
+
     </script>
 </head>
 <body>
