@@ -11,7 +11,57 @@
             正则表达式的元字符 - 特殊字符
 
             1、()
+                1-1 一个整体
+                1-2 单独捕获
+                    =>在你捕获一个字符串的时候，从左边开始每一个小括号依次是数组里面的[1]开始的内容
+                    =>从左到右依次数小括号的开始括号
+            2、(?:)
+                =>整体匹配但不捕获
+                =>只是标志一个整体，但是捕获的时候不会单独捕获出来
+            3、|
+                =>占位或
+                =>表示左边或者右边的都行
+                =>大部分时候和()连用，表示一个整体或者一个整体
+                =>注意：或分开的是左边和右边整个
         */
+
+        // 1.()
+        // 1-1.一个整体
+        // 表示 abc d出现两次
+        // var reg = /abcd{2}/;
+        // console.log(reg.test('abcdd'));     //true
+
+        // // 表示 abcd 这个整体出现两次
+        // var reg2 = /(abcd){2}/
+        // console.log(reg2.test('abcdabcd'));     //true
+
+        // 1-2 单独捕获
+        // var reg = /\d+(\s+)\d+/;
+        // console.log(reg.exec('123   123'));
+        // // 返回值：[0:'123   123',1:'   ']
+        // // 会将小括号中的内容单独捕获放在数组[1]中开始放
+
+        // // 2. （?:）
+        // var reg = /\d+(?:\s+\d+){2}/;
+        // console.log(reg.exec('123   123   123'));
+        // 返回值： [0:'123   123   123']
+
+        // 3、|
+        // var reg = /abc|def/;
+        // console.log(reg.test('abc'));    //true
+        // console.log(reg.test('def'));    //true
+        // console.log(reg.test('aaa'));    //false
+
+
+        // 小练习
+        // 表示以 abc 开头或者以 def 结尾，符合条件的都为true
+        var reg = /^abc|def$/
+        console.log(reg.test('abc'));    //true
+        console.log(reg.test('def'));    //true
+        console.log(reg.test('abcdef'));    //true
+        console.log(reg.test('abcdefg'));    //true
+        console.log(reg.test('aaaadef'));    //true
+
     </script>
 </head>
 
