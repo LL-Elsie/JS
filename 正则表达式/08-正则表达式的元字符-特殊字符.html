@@ -23,6 +23,29 @@
                 =>表示左边或者右边的都行
                 =>大部分时候和()连用，表示一个整体或者一个整体
                 =>注意：或分开的是左边和右边整个
+            4、[]
+                =>注意：**一个[]占一个字符位置**
+                =>表示里面的任意一个都行
+            5、[^]
+                =>注意：**一个[^]占一个字符**
+                =>表示非里面的任意一个
+            6、-
+                =>表示 至 或者 到
+                =>是使用在[]里面的一个符号，表示从 哪一个字符 - 哪一个字符
+                =>前提是他们在 ASCI 码是连着的
+
+            组合形式
+                1、[0-9a-zA-Z_]等价于 \w 
+                2、[^0-9a-zA-Z_]等价于 \W
+                3、[0-9]等价于 \d
+                4、[^0-9]等价于 \D
+                5、[ ] 等价于 \s
+                6、[^ ]等价于 \S
+
+            特殊说明：
+                =>当 点（.）出现在 [] 或者 [^]里面的时候，就只表示一个 点 文本
+
+
         */
 
         // 1.()
@@ -55,12 +78,103 @@
 
         // 小练习
         // 表示以 abc 开头或者以 def 结尾，符合条件的都为true
-        var reg = /^abc|def$/
-        console.log(reg.test('abc'));    //true
-        console.log(reg.test('def'));    //true
-        console.log(reg.test('abcdef'));    //true
-        console.log(reg.test('abcdefg'));    //true
-        console.log(reg.test('aaaadef'));    //true
+        // var reg = /^abc|def$/
+        // console.log(reg.test('abc'));    //true
+        // console.log(reg.test('def'));    //true
+        // console.log(reg.test('abcdef'));    //true
+        // console.log(reg.test('abcdefg'));    //true
+        // console.log(reg.test('aaaadef'));    //true
+
+        // 表示以 ab开头，中间是c或者d，结尾是ef
+        // var reg = /^ab(c|d)ef$/
+        // console.log(reg.test('abc'));    //false
+        // console.log(reg.test('def'));    //false
+        // console.log(reg.test('abcdefg'));    //false
+        // console.log(reg.test('aaaadef'));    //false
+        // console.log(reg.test('abcef'));    //true
+        // console.log(reg.test('abdef'));    //true
+
+        // 4、[]
+        // 表示你的字符串中只要有 a 或者 b 或者 c 或者 d 的任意一个就行 
+        // var reg = /[abcd]/
+        // console.log(reg.test('lglglglglg'));   //false
+        // console.log(reg.test('lglgalglglg'));   //true
+        // console.log(reg.test('lglgblglglg'));   //true
+        // console.log(reg.test('lglglgclglg'));   //true
+        // console.log(reg.test('lglglgdlglg'));   //true
+
+        // 表示字符串只能由一个字符组成，可以是 a b c d 中的任意一个
+        // var reg = /^[abcd]$/
+        // console.log(reg.test('abcd'));   //false
+        // console.log(reg.test('a'));   //true
+        // console.log(reg.test('b'));   //true
+        // console.log(reg.test('c'));   //true
+        // console.log(reg.test('d'));   //true
+
+        // 5、[^]
+        // 表示你的字符串要由一个字符组成，只要不是 a b c d 中的任意一个就可以
+        // var reg = /^[^abcd]$/
+        // console.log(reg.test('f'));   //true
+        // console.log(reg.test('a'));   //false
+        // console.log(reg.test('b'));   //false
+        // console.log(reg.test('c'));   //false
+        // console.log(reg.test('d'));   //false
+
+        // 6、-
+        // 表示由一位数字组成，可以是 0 到 9 的任意数字
+        // var reg = /^[0-9]$/
+        // console.log(reg.test('0'));   //true
+        // console.log(reg.test('1'));   //true
+        // console.log(reg.test('2'));   //true
+        // console.log(reg.test('3'));   //true
+        // console.log(reg.test('4'));   //true
+        // console.log(reg.test('5'));   //true
+        // console.log(reg.test('6'));   //true
+        // console.log(reg.test('7'));   //true
+        // console.log(reg.test('8'));   //true
+        // console.log(reg.test('9'));   //true
+        // console.log(reg.test('a'));   //false
+
+        // // 小写 a 到小写 z
+        // var reg = /^[a-z]$/
+        // console.log(reg.test('A'));   //false
+        // console.log(reg.test('a'));   //true
+        // console.log(reg.test('Z'));   //false
+        // console.log(reg.test('z'));   //true
+
+        // 大写 A 到大写 Z
+        // var reg = /^[A-Z]$/
+        // console.log(reg.test('A'));   //true
+        // console.log(reg.test('a'));   //false
+        // console.log(reg.test('Z'));   //true
+        // console.log(reg.test('z'));   //false
+
+
+        // var reg = /^[abc.]$/
+        // console.log(reg.test('a'));   //true
+        // console.log(reg.test('b'));   //true
+        // console.log(reg.test('c'));   //true
+        // console.log(reg.test('.'));   //true
+        // console.log(reg.test('1'));   //false
+
+
+        // 小练习
+        // ()圈起来一个整体，这个整体是 abc 或者 def 都行
+        // {2}表示整体出现两次，只要有两个整体就可以
+        // var reg = /^(abc|def){2}$/;
+        // console.log(reg.test('abcabc'));    //true
+        // console.log(reg.test('defdef'));    //true
+        // console.log(reg.test('abcdef'));    //true
+        // console.log(reg.test('defabc'));    //true
+
+
+        // 小练习2：验证一个字符串，只能由数字字母下划线组成，6到12位，不能以 _ 开头
+        var reg = /^[a-zA-Z0-9]\w{5,11}$/
+        console.log(reg.test('abcdef'));           //true
+        console.log(reg.test('_abcdef'));          //false
+        console.log(reg.test('abcdef123456'));     //true
+        console.log(reg.test('abcdef1234567'));    //false
+
 
     </script>
 </head>
