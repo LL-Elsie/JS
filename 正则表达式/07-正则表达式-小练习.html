@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 小练习
+
+        /* 
+            需求1：捕获一段 html 结构的字符串
+            <div style='' class=''><span></span></div>
+            捕获开标前里面的所有内容
+        */
+
+        // var str = '<div style="" class=""><span></span></div>';
+        // var reg = /<.+?>/;
+        // console.log(reg.exec(str));
+
+
+        /* 
+            需求2：
+        */
+       var reg = /^abcd{2}$/;     //一个限定符只修饰前面一个字母
+       console.log(reg.test('abcdabcd'));   //false
+       console.log(reg.test('abcdd'));   //true
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
