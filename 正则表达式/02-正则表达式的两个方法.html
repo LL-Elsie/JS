@@ -22,12 +22,12 @@
 
         // a、准备一个正则
         var reg = /abcd/;
-        console.log(reg.test('aaaaaaaaajfbb abcdsdfg'));
+        console.log(reg.test('sjdnab'));  //false
 
-        var res = reg.exec('aaaabbbbccccsssss');
+        var res = reg.exec('aaaaaaaaaaccccc');    //null
         console.log(res);
 
-        var res2 = reg.exec('aaaabcdddd');
+        var res2 = reg.exec('aaaabcdddd');   //[0:"abcd"]
         console.log(res2);
 
     </script>
