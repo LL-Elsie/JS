@@ -33,10 +33,10 @@
 
         // 1、正向肯定预查
         // 字符串是 ES2015 或者 ES2016 是可以的，但是只捕获 ES ，不需要2015或者2016
-        var reg = /ES(?=2015|2016)/;
-        console.log(reg.exec('ES2015'));     //捕获ES
-        console.log(reg.exec('ES2016'));     //捕获ES
-        console.log(reg.exec('ES2017'));     //不捕获ES
+        // var reg = /ES(?=2015|2016)/;
+        // console.log(reg.exec('ES2015'));     //捕获ES
+        // console.log(reg.exec('ES2016'));     //捕获ES
+        // console.log(reg.exec('ES2017'));     //不捕获ES
 
         // 2、正向否定预查
         // 字符串 是 ES 后面不跟着 2015 或者 2016 的就行
@@ -52,10 +52,10 @@
         // console.log(reg.exec('2017ES'));       //不捕获ES
 
         // 4、负向否定预查
-        // var reg = /(?<!2015|2016)ES/;
-        // console.log(reg.exec('2015ES'));      //不捕获ES
-        // console.log(reg.exec('2016ES'));      //不捕获ES
-        // console.log(reg.exec('2017ES'));      //捕获ES
+        var reg = /(?<!2015|2016)ES/;
+        console.log(reg.exec('2015ES'));      //不捕获ES
+        console.log(reg.exec('2016ES'));      //不捕获ES
+        console.log(reg.exec('2017ES'));      //捕获ES
 
 
 
