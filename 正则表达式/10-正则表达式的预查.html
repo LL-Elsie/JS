@@ -27,7 +27,7 @@
 
         // 1、正向肯定预查
         // 字符串是 ES2015 或者 ES2016 是可以的，但是只捕获 ES ，不需要2015或者2016
-        var reg = /^ES(?=2015|2016)$/;
+        var reg = /ES(?=2015|2016)/;
         console.log(reg.exec('ES2015'));
         console.log(reg.exec('ES2016'));
 
