@@ -46,10 +46,10 @@
         // console.log(reg.exec('ES2017'));      //捕获ES
 
         // 3、负向肯定预查
-        // var reg = /(?<=2015|2016)ES/;
-        // console.log(reg.exec('2015ES'));       //捕获ES
-        // console.log(reg.exec('2016ES'));       //捕获ES
-        // console.log(reg.exec('2017ES'));       //不捕获ES
+        var reg = /(?<=2015|2016)ES/;
+        console.log(reg.exec('2015ES'));       //捕获ES
+        console.log(reg.exec('2016ES'));       //捕获ES
+        console.log(reg.exec('2017ES'));       //不捕获ES
 
         // 4、负向否定预查
         var reg = /(?<!2015|2016)ES/;
