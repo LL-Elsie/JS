@@ -10,9 +10,9 @@
         /* 
             重复出现
 
-            1、/num
+            1、\num
             => num 是一个正整数
-            => /1 /2 /3 ...
+            => \1 \2 \3 ...
             => num 是一个数字，表示的是正则第 num 个可被捕获的 ()
                 -> 这个可被捕获的小括号位置是什么，出现一份 一模一样的内容
         */
@@ -27,8 +27,16 @@
         // var reg = /([abcd])\d+([abcd])\d+\1\2/
         // console.log(reg.test('a123b123ab'));      //true
 
-        var reg = /([abcd])\d+([abcd])\d+\1/
-        console.log(reg.test('a123b123a'));      //true
+        // var reg = /([abcd])\d+([abcd])\d+\1/
+        // console.log(reg.test('a123b123a'));      //true
+        // console.log(reg.test('a123b123b'));      //false
+
+
+        // 前面的小括号内表示匹配不捕获，因此\1所捕获的则是从下一个小括号开始
+        var reg = /(?:[abcd])\d+([abcd])\d+\1/
+        console.log(reg.test('a123b123a'));      //false
+        console.log(reg.test('a123b123b'));      //true
+
     </script>
 </head>
 
