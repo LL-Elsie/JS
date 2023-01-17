@@ -24,10 +24,8 @@
 
 
 
-        var reg = /[abcd]\d+([abcd])\d+/;
-        console.log(reg.test('a123b123'));      //true
-        console.log(reg.test('abc123def'));      //false
-
+        var reg = /([abcd])\d+([abcd])\d+\1\2/
+        console.log(reg.test('a123b123ab'));      //true
     </script>
 </head>
 
