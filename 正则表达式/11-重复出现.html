@@ -18,8 +18,14 @@
         */
 
         // \1 表示重复出现一个 （） 一模一样的内容一遍
-        var reg = /(abc|def)\d+\1/;
-        console.log(reg.test('abc123abc'));      //true
+        // var reg = /(abc|def)\d+\1/;
+        // console.log(reg.test('abc123abc'));      //true
+        // console.log(reg.test('abc123def'));      //false
+
+
+
+        var reg = /[abcd]\d+([abcd])\d+/;
+        console.log(reg.test('a123b123'));      //true
         console.log(reg.test('abc123def'));      //false
 
     </script>
