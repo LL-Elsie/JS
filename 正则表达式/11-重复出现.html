@@ -24,8 +24,11 @@
 
 
 
-        var reg = /([abcd])\d+([abcd])\d+\1\2/
-        console.log(reg.test('a123b123ab'));      //true
+        // var reg = /([abcd])\d+([abcd])\d+\1\2/
+        // console.log(reg.test('a123b123ab'));      //true
+
+        var reg = /([abcd])\d+([abcd])\d+\1/
+        console.log(reg.test('a123b123a'));      //true
     </script>
 </head>
 
