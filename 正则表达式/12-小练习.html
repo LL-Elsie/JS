@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            小练习
+        */
+    
+        // 只要字符串中有2到4个数字即可
+        // var reg = /\d{2,4}/
+        // console.log(reg.test(''));              //false
+        // console.log(reg.test('1'));             //false
+        // console.log(reg.test('12'));            //true
+        // console.log(reg.test('123'));           //true
+        // console.log(reg.test('1234'));          //true
+        // console.log(reg.test('12345'));         //true
+        // console.log(reg.test('123456'));        //true
+
+        /* 
+            需求1：
+                @ 名字：6到8位，不能以_开头，只能由数字字母下划线组成
+                @ 只能是 qq 163 sina 邮箱
+                @ 后缀只能是 .com 或者 .cn
+        */
+
+        var reg = /^[0-9a-zA-Z]\w{5,7}@(qq|163|sina)\.(com|cn)$/
+        console.log(reg.test('zxcasd@qq.com'));      //true
+        console.log(reg.test('_zxcasd@qq.com'));     //false
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
