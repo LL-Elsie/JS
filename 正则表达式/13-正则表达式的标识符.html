@@ -42,6 +42,14 @@
         // console.log(reg.exec(str));   //开始位就是[0]，捕获123
 
         // 3、 y 粘性全局
+        // 每一次捕获的时候，第一次必须是从[0]位置就刚好能捕获到内容
+        // 第二次必须是从第一次结束位置开始，就刚好能捕获整个正则表达式的
+        var str = '123456ghi789abc'
+        var reg = /\d{3}/y
+        console.log(reg.exec(str));   //捕获123
+        console.log(reg.exec(str));   //捕获456
+        console.log(reg.exec(str));   //为null，从第二次结束位置开始，无法捕获数字
+
 
     </script>
 </head>
