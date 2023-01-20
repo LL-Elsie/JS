@@ -40,14 +40,17 @@
     //     tmp = reg.exec(str)
     //    }
     //    console.log(res);
-
+b
 
     /* 
         全部替换字符串内的三位数为 **
+            + 一旦你有了全局标识符 g 直接使用 replace 就可以了
     */
 
     var str = 'asdfgdfv123asdfgert123vbnm456rtyui789uio'
-    
+    var reg = /\d{3}/g
+    console.log(str.replace(reg,'**'));
+
     </script>
 </head>
 <body>
