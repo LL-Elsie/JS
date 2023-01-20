@@ -20,7 +20,13 @@
         */
 
         //1、 i 忽略大小写
-        var reg = /[abcd]*/
+        var reg = /^[abcd]*$/
+        console.log(reg.test('abcdabcd'));    //true
+        console.log(reg.test('abCdabcD'));    //false
+
+        var reg2= /^[abcd]*$/i
+        console.log(reg2.test('abcdabcd'));    //true
+        console.log(reg2.test('abCdabcD'));    //true
     </script>
 </head>
 <body>
