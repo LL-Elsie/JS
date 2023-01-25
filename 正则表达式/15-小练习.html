@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,40 +21,42 @@
                 => 需要循环  while
                 => 只要 exec 捕获出来的不是 null，就继续
         */
-    //    var str = 'asdfgdfv123asdfgert123vbnm456rtyui789uio'
+        //    var str = 'asdfgdfv123asdfgert123vbnm456rtyui789uio'
 
-    //    // 0.捕获正则
-    //    var reg = /\d{3}/g
+        //    // 0.捕获正则
+        //    var reg = /\d{3}/g
 
-    //    // 1.准备数组
-    //    var res = [];
+        //    // 1.准备数组
+        //    var res = [];
 
-    //    // 2.先捕获一次
-    //    var tmp = reg.exec(str)
+        //    // 2.先捕获一次
+        //    var tmp = reg.exec(str)
 
-    //    //3. while 循环
-    //    //tmp 的结果，要么是[]，要么是 null
-    //    while(tmp) {
-    //     //把 tmp 这个数组里面的[0]放到我们准备好的数组里面
-    //     res.push(tmp[0])
-    //     // 改变自身
-    //     tmp = reg.exec(str)
-    //    }
-    //    console.log(res);
-b
+        //    //3. while 循环
+        //    //tmp 的结果，要么是[]，要么是 null
+        //    while(tmp) {
+        //     //把 tmp 这个数组里面的[0]放到我们准备好的数组里面
+        //     res.push(tmp[0])
+        //     // 改变自身
+        //     tmp = reg.exec(str)
+        //    }
+        //    console.log(res);
+        b
 
-    /* 
-        全部替换字符串内的三位数为 **
-            + 一旦你有了全局标识符 g 直接使用 replace 就可以了
-    */
+        /* 
+            全部替换字符串内的三位数为 **
+                + 一旦你有了全局标识符 g 直接使用 replace 就可以了
+        */
 
-    var str = 'asdfgdfv123asdfgert123vbnm456rtyui789uio'
-    var reg = /\d{3}/g
-    console.log(str.replace(reg,'**'));
+        var str = 'asdfgdfv123asdfgert123vbnm456rtyui789uio'
+        var reg = /\d{3}/g
+        console.log(str.replace(reg, '**'));
 
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
