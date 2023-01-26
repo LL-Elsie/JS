@@ -37,6 +37,7 @@
 
             补充：正则匹配中文
                 + 在正则表达式里面，\u 表示查找中文，后面带上中文的四位 unicode 编码
+                + [\u4e00-\u9fa5]   --- 表示任意一个中文字符
         */
 
         // 1、search
@@ -54,10 +55,12 @@
 
 
         // 3、match()
-        var str = 'hello 你好 world hello 你好 world hello 你好 world hello 你好 world';
-        console.log(str.match('你好'));     //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
-        console.log(str.match(/你好/));     //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
-        console.log(str.match(/你好/g));    //['你好', '你好', '你好', '你好']
+        var str = 'hello 你好 world hello 你好 world hello 你好 world hello 你好 世界';
+        console.log(str.match('你好'));                  //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
+        console.log(str.match(/你好/));                  //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
+        console.log(str.match(/你好/g));                 //['你好', '你好', '你好', '你好']
+        console.log(str.match(/[\u4e00-\u9fa5]+/g));    //['你好', '你好', '你好', '你好', '世界']
+
 
 
     </script>
