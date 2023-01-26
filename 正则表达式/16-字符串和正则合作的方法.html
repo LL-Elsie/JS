@@ -25,12 +25,40 @@
                     1、只能替换第一个查找到的内容，返回替换好的字符串
                     2、没有全局标识符 g 的时候，只能替换第一个查找到的内容，返回替换好的字符串
                        有全局标识符 g 的时候，会把字符串内所有满足正则规则的内容全部替换，返回替换好的字符串
+            3、match()
+                + 语法：
+                    1、字符串.match(字符串片段)
+                    2、字符串.match(正则表达式)
+                + 返回值：
+                    1、查找到字符串内一个满足字符串片段的内容返回，返回格式和 exec 一致
+                    2、当正则表达式没有全局标识符 g 的时候，返回值和 exec 一致
+                       当正则表达式有全局标识符 g 的时候，返回一个数组，里面是所有满足条件的内容
+
+
+            补充：正则匹配中文
+                + 在正则表达式里面，\u 表示查找中文，后面带上中文的四位 unicode 编码
         */
 
         // 1、search
         // var str = 'sada123sjdk';
         // console.log(str.search('123'));       //4
         // console.log(str.search(/\d{3}/));     //4
+
+
+
+        // 2、replace()
+        // var str = 'abcd123abcd123abcd123abcd';
+        // console.log(str.replace('123','**'));            //abcd**abcd123abcd123abcd
+        // console.log(str.replace(/\d{3}/,'**'));          //abcd**abcd123abcd123abcd
+        // console.log(str.replace(/\d{3}/g,'**'));         //abcd**abcd**abcd**abcd
+
+
+        // 3、match()
+        var str = 'hello 你好 world hello 你好 world hello 你好 world hello 你好 world';
+        console.log(str.match('你好'));     //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
+        console.log(str.match(/你好/));     //['你好', index: 6, input: 'hello 你好 world', groups: undefined]
+        console.log(str.match(/你好/g));    //['你好', '你好', '你好', '你好']
+
 
     </script>
 </head>
